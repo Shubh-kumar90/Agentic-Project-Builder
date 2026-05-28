@@ -6,7 +6,8 @@ function ProjectForm() {
     const [projectIdea, setProjectIdea] = useState("");
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
-
+const API_URL =
+    import.meta.env.VITE_API_URL;
     const generateProject = async () => {
 
         try {
@@ -14,7 +15,7 @@ function ProjectForm() {
             setLoading(true);
 
             const response = await axios.post(
-                "http://localhost:3000/api/project/generate",
+    `${API_URL}/api/project/generate`,
                 { projectIdea }
             );
 

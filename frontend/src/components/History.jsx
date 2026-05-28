@@ -17,7 +17,7 @@ function History() {
 
             const response =
                 await axios.get(
-                    "http://localhost:3000/api/history"
+                    "`${API_URL}/api/history`"
                 );
 
             setProjects(response.data);
